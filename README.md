@@ -9,14 +9,14 @@
 
 ## Installation 
 
-#install Laravel Breeze for quick authentication scaffolding, and Livewire for dynamic interfaces. 
+# install Laravel Breeze for quick authentication scaffolding, and Livewire for dynamic interfaces. 
 
--composer create-project laravel/laravel authapp
--cd authapp
--composer require laravel/breeze --dev
--php artisan breeze:install blade
+- composer create-project laravel/laravel authapp
+- cd authapp
+- composer require laravel/breeze --dev
+- php artisan breeze:install blade
 
--composer require livewire/livewire
+- composer require livewire/livewire
 
 Add the following Blade directives in the head tag, and before the end body tag in the resources/views/layouts/app.blade.php file.
 
@@ -34,11 +34,11 @@ Add the following Blade directives in the head tag, and before the end body tag 
     </body>
 </html>
 
-#laravel Socialite
--Official Laravel package Laravel socialite allow users to login and register via GitHub, Google, and Facebook
--composer require laravel/socialite
---add the colums to users table for the auth methods used 
----php artisan make:migration "add socialite fields to users table"
+# laravel Socialite
+- Official Laravel package Laravel socialite allow users to login and register via GitHub, Google, and Facebook
+- composer require laravel/socialite
+-- add the colums to users table for the auth methods used 
+--- php artisan make:migration "add socialite fields to users table"
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
