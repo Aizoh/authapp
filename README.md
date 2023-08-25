@@ -7,6 +7,38 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Installation 
+
+#install Laravel Breeze for quick authentication scaffolding, and Livewire for dynamic interfaces. 
+
+-composer create-project laravel/laravel authapp
+-cd authapp
+-composer require laravel/breeze --dev
+-php artisan breeze:install blade
+
+-composer require livewire/livewire
+
+Add the following Blade directives in the head tag, and before the end body tag in the resources/views/layouts/app.blade.php file.
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        //
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles 
+    </head>
+    <body class="font-sans antialiased">
+        //
+        @livewireScripts 
+    </body>
+</html>
+
+#laravel Socialite
+-Official Laravel package Laravel socialite allow users to login and register via GitHub, Google, and Facebook
+-composer require laravel/socialite
+--add the colums to users table for the auth methods used 
+---php artisan make:migration "add socialite fields to users table"
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
