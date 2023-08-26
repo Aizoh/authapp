@@ -26,10 +26,10 @@ class SocialiteController extends Controller
         $response = Socialite::driver($provider)->user();
         
         //GET USER DETAILS
-        $user = User::firstOrCreate([
-            'email' =>$response->getEmail(),
-            'password' =>Str::password()
-        ]);
+        $user = User::firstOrCreate(
+            ['email' =>$response->getEmail()],
+            ['password' =>Str::password()],
+        );
 
         $data = [$provider .'_id' => $response->getId()];
 
@@ -38,7 +38,7 @@ class SocialiteController extends Controller
 
             event(new Registered($user));
         }
-        $user->update('data');
+        $user->update($data);
         Auth::login($user, remember:true);
         return redirect()->intended(RouteServiceProvider::HOME);
     }
